@@ -7,7 +7,7 @@
 ## ACTIVE TASK
 **Task:** Core Loop stage hardening — Stage 1 through Stage 10 test/commit execution
 **Started:** March 2026
-**Status:** Completed in this session — all stage suites passing with per-stage commits
+**Status:** Completed in this session — all stage suites passing, remaining empty backend scaffolds implemented, regression green
 **Priority:** P0 — continue implementation depth in non-scaffold agents while preserving green regression
 
 ---
@@ -108,6 +108,11 @@ class ForgeState(BaseModel):
 - Current status: `23 passed` (`pytest -q`) on the full test suite
 
 **Next step:** implement deeper non-scaffold agent behavior (provider-backed PM/Architect/Build/Quality) while preserving stage test contracts
+
+**Latest completion pass:**
+- Implemented remaining empty Python modules across API, middleware/routes, memory tiers, RAG helpers, scheduler workers, finops tracker, skill registry, and ML agent scaffold
+- Added unit coverage for newly completed scaffolds (`tests/unit/test_remaining_scaffolds.py`)
+- Regression status after completion pass: `28 passed, 1 skipped`
 
 ---
 
