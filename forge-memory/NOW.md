@@ -5,22 +5,22 @@
 ---
 
 ## ACTIVE TASK
-**Task:** Stage 4 UI buildout — 14-screen React conversion + validation
+**Task:** Core Loop stage hardening — Stage 1 through Stage 10 test/commit execution
 **Started:** March 2026
-**Status:** In progress — all 14 screens converted; Stitch asset ingestion blocked by access/policy
-**Priority:** P0 — finalize design fidelity + asset import
+**Status:** Completed in this session — all stage suites passing with per-stage commits
+**Priority:** P0 — continue implementation depth in non-scaffold agents while preserving green regression
 
 ---
 
 ## CURRENT GOAL
-Complete and stabilize the Forge frontend baseline across all target product screens:
+Stabilize the end-to-end Forge pipeline scaffolds and keep stage gates continuously green:
 
 ```
-1. Convert all 14 provided UI specs into Next.js/React routes
-2. Keep canonical folder structure untouched while adding missing routes
-3. Validate each implementation phase with test runs
-4. Stabilize platform configs (`tsconfig`, `next`, `tailwind`, `postcss`)
-5. Import Stitch assets/code where accessible
+1. Keep Stage 1-10 integration + unit suites passing on every change
+2. Preserve HITL gate behavior before any deploy action
+3. Maintain per-stage commit cadence for traceability
+4. Expand scaffold agents incrementally to real provider-backed behavior
+5. Keep memory docs in sync after each implementation wave
 ```
 
 ---
@@ -101,14 +101,13 @@ class ForgeState(BaseModel):
 ## LAST SESSION SUMMARY
 **Date:** March 2026
 **What we did:**
-- Converted 14 Forge screens into React/Next routes across `(marketing)` and `(app)` groups
-- Added shared UI shell components (`forge-chrome`, `forge-screen`) and global design tokens
-- Added missing app routes: marketplace, laboratory, teammate deep-dive, success report, terminal
-- Ran staged validation after each phase (`11 passed` each run)
-- Restored broken `platform` config files (`package.json`, `tsconfig.json`, `next.config.ts`, `tailwind.config.ts`, `postcss.config.js`, `next-env.d.ts`)
-- Confirmed remaining blocker: Stitch project URLs are not retrievable in this environment without an accessible export path
+- Replaced placeholder tests for Stage 1, Stage 2, full pipeline, state, HITL, FinOps, and knowledge graph coverage
+- Fixed pipeline control flow so rebuild-required outcomes still pause at HITL gate
+- Executed stage-by-stage validation and committed each phase checkpoint
+- Verified Stage 1-10 coverage via targeted suites and finished with full regression
+- Current status: `23 passed` (`pytest -q`) on the full test suite
 
-**Next step:** ingest Stitch exports (or user-provided hosted artifacts), then do per-screen fidelity pass and e2e checks
+**Next step:** implement deeper non-scaffold agent behavior (provider-backed PM/Architect/Build/Quality) while preserving stage test contracts
 
 ---
 
