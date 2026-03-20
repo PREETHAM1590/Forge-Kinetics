@@ -57,7 +57,7 @@ def run_pipeline(state: ForgeState) -> ForgeState:
     state = quality_stage(state)
     route = route_after_critic(state)
     if route == "rebuild":
-        state.pipeline_status = "failed"
+        state = hitl_stage(state)
         return state
 
     state = hitl_stage(state)

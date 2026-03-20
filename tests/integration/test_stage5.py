@@ -13,7 +13,7 @@ def test_stage5_pipeline_pauses_without_approval() -> None:
         project_id=str(uuid.uuid4()),
         user_id="stage5-user",
         session_id=str(uuid.uuid4()),
-        user_input="Build a dashboard with auth and billing",
+        user_input="Build a dashboard with auth",
         total_allocated_tokens=6000,
     )
 
