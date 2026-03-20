@@ -1,0 +1,60 @@
+# .cursorrules — Forge Project
+# Place this file at the root of your Forge repository.
+# Cursor reads this automatically on every conversation.
+
+## PROJECT
+You are building Forge — an autonomous AI software development platform.
+Owner: Preetham | Bengaluru, India | Stack: Next.js 15 + Supabase + Python FastAPI
+
+## MEMORY BANK — READ BEFORE EVERY RESPONSE
+Always read these files before suggesting or writing code:
+- forge-memory/PROJECT_INDEX.md → current status
+- forge-memory/NOW.md → active task
+- forge-memory/ARCHITECTURE.md → system design
+- forge-memory/CONSTRAINTS.md → hard rules
+- forge-memory/API_CONTRACTS.md → Pydantic schemas
+- forge-memory/DECISIONS.md → decided questions (don't re-debate)
+
+## HARD RULES (NEVER VIOLATE)
+C1: HITL gate mandatory — no autonomous production deploy
+C2: Per-agent E2B sandbox — each agent owns its own isolated environment
+C3: Credit-based pricing — $99/$299/Enterprise only, no flat-rate
+C4: Next.js + Supabase only in Phase 1
+C5: PydanticAI validates every agent output before passing downstream
+C6: FinOps Agent enforces token budget — kills runaway loops
+C7: Maintenance Agent monitors only — never auto-applies code
+C8: Federated Learning only — no raw code crosses tenant boundaries
+
+## AGENT RUNTIME PATTERN
+All build agents use OpenHands-style observe→think→act loop (max 20 iterations).
+Each agent runs in its OWN E2B sandbox with purpose-specific Docker image.
+Agents communicate ONLY via LangGraph ForgeState — never directly.
+Artifacts transport via Git (agents commit → next agent pulls).
+
+## LLM ROUTING
+- Opus 4.5: Orchestrator, Architect, Critic, Security, ML Agent
+- Sonnet 4.5: PM, Backend, Testing, DevOps, Maintenance
+- Gemini 3 Pro: Frontend, Design (multimodal + v0.dev)
+- Haiku 4.5: FinOps, Docs (cheapest)
+- Perplexity Sonar: Research Agent (real-time + citations)
+
+## ORCHESTRATION
+- LangGraph: master ForgeState graph + checkpointing + LangSmith
+- Google ADK: ParallelAgent (frontend∥backend), LoopAgent (testing retry),
+              Resume (HITL gate pause/resume), A2A (dynamic spawning)
+
+## CURRENT BUILD TARGET
+See forge-memory/NOW.md for the active task.
+See forge-memory/PROJECT_INDEX.md for milestone status.
+
+## CODE STANDARDS
+- Python: type hints everywhere, async/await, Pydantic models, PydanticAI output validation
+- TypeScript: strict mode, Zod API validation, server components by default
+- Commits: "type(scope): description" e.g. "feat(pm-agent): add PRD validation"
+- Never expose SUPABASE_SERVICE_ROLE_KEY to client
+- Never catch bare Exception — use specific exceptions
+
+## AFTER COMPLETING ANY TASK
+1. Update forge-memory/NOW.md — what was done + what's next
+2. Update forge-memory/PROJECT_INDEX.md — move completed items
+3. Commit with proper message format

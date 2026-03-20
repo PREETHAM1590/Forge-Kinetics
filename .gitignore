@@ -1,0 +1,9 @@
+﻿.venv/
+.env.local
+platform/.env.local
+__pycache__/
+.pytest_cache/
+*.pyc
+forge-app/
+forge-backend/
+
